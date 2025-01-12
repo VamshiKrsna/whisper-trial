@@ -2,4 +2,3 @@ openai-whisper
 pydub
 torch
 streamlit
-io
