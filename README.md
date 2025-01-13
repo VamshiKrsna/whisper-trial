@@ -14,3 +14,10 @@ or
 ```
 pip install ffmpeg-python
 ```
+
+
+you can find the qml file and qt widget for whisper transcription in the repo.
+
+
+
+<img src="./transcriber.png">
