@@ -2,24 +2,18 @@ import sys
 import whisper
 import sounddevice as sd
 import numpy as np
-<<<<<<< HEAD
 from PySide6.QtCore import QThread, Signal, QObject 
-=======
 from PySide6.QtCore import QThread, Signal, QObject  
->>>>>>> 75cf8ed689590ff6cc59acf189bdf76bb05779e2
 from PySide6.QtGui import QGuiApplication
 from PySide6.QtQml import QQmlApplicationEngine
 
 
 class TranscriptionThread(QThread):
-<<<<<<< HEAD
     transcription_signal = Signal(str)  
-=======
     """
     Thread to handle microphone input and transcription.
     """
     transcription_signal = Signal(str) 
->>>>>>> 75cf8ed689590ff6cc59acf189bdf76bb05779e2
 
     def __init__(self, model_name="tiny", parent=None):
         super().__init__(parent)
@@ -38,11 +32,9 @@ class TranscriptionThread(QThread):
 
                 audio = np.array(audio_chunk, dtype=np.float32)
 
-<<<<<<< HEAD
+
                 result = self.model.transcribe(audio, fp16=False, language = "en")
-=======
                 result = self.model.transcribe(audio, fp16=False)
->>>>>>> 75cf8ed689590ff6cc59acf189bdf76bb05779e2
                 transcription = result.get("text", "")
 
                 self.transcription_signal.emit(transcription)
@@ -54,10 +46,7 @@ class TranscriptionThread(QThread):
 if __name__ == "__main__":
     app = QGuiApplication(sys.argv)
     engine = QQmlApplicationEngine()
-<<<<<<< HEAD
 
-=======
->>>>>>> 75cf8ed689590ff6cc59acf189bdf76bb05779e2
     engine.load("transcription_app.qml")
     if not engine.rootObjects():
         print("Error: Failed to load QML file.")
