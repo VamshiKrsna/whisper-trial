@@ -104,3 +104,5 @@ if __name__ == "__main__":
     root.findChild(QObject, "stopButton").clicked.connect(transcription_thread.stop)
 
     sys.exit(app.exec())
+
+    
